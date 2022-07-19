@@ -10,7 +10,7 @@ module.exports = {
     const stringOption = interaction.options.getString('input');
     let channel = interaction.channel;
 
-    if (stringOption.length > 0) {
+    if (stringOption) {
       const fuzzledMessage = stringUnjumble(stringOption, 'n');
       await interaction.reply(`${fuzzledMessage}`);
     } else {
