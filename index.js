@@ -4,7 +4,11 @@ const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js'
 const { token } = require('./config.json');
 
 // Create new discord client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds], partials: [Partials.Channel] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent], partials: [Partials.Channel] });
+
+module.exports = {
+  client
+};
 
 // Command handler set up
 client.commands = new Collection();
@@ -40,6 +44,5 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-
 // Login bot using token
-client.login(token); 
+client.login(token);
