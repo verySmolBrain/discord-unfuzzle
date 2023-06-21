@@ -4,7 +4,7 @@ const http = require('http'); // or 'https' for HTTPS URLs
 const fs = require('fs');
 const { DownloaderHelper } = require('node-downloader-helper');
 
-const { createUserEntry, savePersist, loadPersist, userCalendarExists } = require('../dbManage');
+const { createUserEntry, savePersist, loadPersist, userCalendarExists } = require('../../database/dbManage');
 
 function addCalendar(userId, calLink) {
     let userMap = loadPersist();
